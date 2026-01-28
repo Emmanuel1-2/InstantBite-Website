@@ -145,6 +145,7 @@ What map() actually does:
        <Route path="/register" element={<Register />} />
        <Route path="/checkout" element={<Checkout cartItems={cartItems}/>} />
        <Route path='/menu' element={<Menu />} />
+       <Route path="/contact" element={<GetInTouch />} />
       </Routes>
       
       {isCartOpen && (
@@ -152,6 +153,7 @@ What map() actually does:
       )}
 
       {toast && <div className="toast-popup">{toast}</div>}
+      <InstantBiteFooter></InstantBiteFooter>
     </>
   );
 }

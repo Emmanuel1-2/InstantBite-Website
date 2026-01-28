@@ -3,7 +3,7 @@ import Style from './GetInTouch.module.css';
 function GetInTouch() {
 
     return (
-        <div className={`${Style["get-in-touch"]} container p-5`}>
+        <div className={`${Style["get-in-touch"]} container mt-4 p-5`}>
             <h2 style={{textAlign: "center", fontSize: "42px", marginTop: "10px", marginBottom: "18px", fontWeight: "800", color: "#2b323cff"}}>Get in <span style={{color: "#ff9900"}}>Touch</span></h2>
             <p style={{textAlign: "center", marginBottom: "60px", fontSize: "22px", color: "#666"}}>Questions? Feedback? We'd love to hear from you!</p>
 
@@ -45,7 +45,6 @@ function GetInTouch() {
                 
             </div>
         </div>
-
     )
 }
 

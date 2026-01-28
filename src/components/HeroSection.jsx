@@ -3,6 +3,7 @@ import classes from './HeroSection.module.css'
 import chicken from '../assets/fried chicken.png'
 import parfait from '../assets/parfait.png'
 import spice from '../assets/spices.png'
+import { Link } from "react-router-dom";
 
 
 function HeroSection(props) {
@@ -36,7 +37,7 @@ function HeroSection(props) {
                 </div>
                 <div className={`${classes["hero-buttons"]} d-flex gap-3`}>
                     <button className="btn btn-lg border-0 text-white" style={{backgroundColor: "#dd6604ff"}}>Order Now <i className="ri-arrow-right-long-line"></i></button>
-                    <button className="btn btn-outline-secondary btn-lg">Explore Menu</button>
+                    <Link to="/menu" className="btn btn-outline-secondary btn-lg">Explore Menu</Link>
                 </div>
 
                 <div className="details d-flex gap-4 mt-5">

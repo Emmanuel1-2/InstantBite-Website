@@ -9,7 +9,7 @@ import ExploreMenu from '../components/ExploreMenu.jsx'
 import CustomerFavorite from '../components/CustomerFavorite.jsx'
 import CustomersSay from '../components/CustomersSay.jsx'
 import GetInTouch from '../components/GetInTouch.jsx'
-import InstantBiteFooter from '../components/InstantBiteFooter.jsx'
+// import InstantBiteFooter from '../components/InstantBiteFooter.jsx'
 
 
 
@@ -21,7 +21,7 @@ export default function Home({ addToCart }) {
       <CustomerFavorite addToCart={addToCart}></CustomerFavorite>
       <CustomersSay></CustomersSay>
       <GetInTouch></GetInTouch>
-      <InstantBiteFooter></InstantBiteFooter>
+      
     </div>
   )
 }

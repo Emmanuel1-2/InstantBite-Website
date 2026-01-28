@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Style from './CartSidebar.module.css'
 import cartImg from '../assets/cart icon.png'
 import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 export default function CartSidebar({ onClose, cartItems, increment, decrement, removeItem }) {
@@ -87,7 +87,7 @@ Why? Because effects capture values.
                   <img src={cartImg} alt="" />
                   <p className='mt-2' style={{color: "#2b323cff", fontSize: "16.5px", fontWeight: "600"}}>Your cart is empty</p>
                   <p style={{color: "#555"}}>Add some delicious items to get started!</p>
-                  <button className='btn btn-md rounded-3 text-white mt-3' style={{backgroundColor: "#dd6604ff", fontSize: "14.8px"}}>Browse Menu</button>
+                  <Link to="/menu" className={`btn btn-md rounded-3 text-white mt-3 ${isClosing ? Style.closeee : ""}`} onClick={handleClose} style={{backgroundColor: "#dd6604ff", fontSize: "14.8px"}}>Browse Menu</Link>
                 </div>
                 </div>
           </div>
