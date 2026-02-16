@@ -10,7 +10,7 @@ import CustomersSay from './components/CustomersSay.jsx'
 import GetInTouch from './components/GetInTouch.jsx'
 import InstantBiteFooter from './components/InstantBiteFooter.jsx'
 import FoodMenu from './components/FoodMenu.jsx'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './Pages/Home.jsx'
 import OrderPage from './Pages/OrderPage.jsx'
 import Login from './Pages/Login.jsx'
@@ -25,6 +25,8 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [toast, setToast] = useState(null);
+
+  const location = useLocation();
 
   function addToCart(item) {
     setCartItems(prev => {
@@ -153,12 +155,50 @@ What map() actually does:
       )}
 
       {toast && <div className="toast-popup">{toast}</div>}
-      <InstantBiteFooter></InstantBiteFooter>
+
+      {/* <InstantBiteFooter></InstantBiteFooter> */}
+      {location.pathname !== "/login" && <InstantBiteFooter />}
+ 
     </>
   );
 }
 
 export default App
+ 
+/*
+location.pathname !== "/login" && <InstantBiteFooter />
+
+"/home" !== "/login"   // true     -  Footer appears <InstantBiteFooter />
+ "/login" !== "/login"   // false   -  React renders nothing.
+
+import { useLocation } from "react-router-dom";
+
+function App() {
+  const location = useLocation();
+
+  return (
+    <>
+      {
+        location.pathname !== "/login" &&
+        location.pathname !== "/register" &&
+        <InstantBiteFooter />
+      }
+    </>
+  );
+}
+
+### {
+  !["/login", "/register"].includes(location.pathname) &&
+  <InstantBiteFooter />
+}
+
+Cleaner scalable version:
+const hiddenRoutes = ["/login", "/register", "/admin"];
+
+!hiddenRoutes.includes(location.pathname) &&
+  <InstantBiteFooter />
+
+*/
 
 
 /*
@@ -274,3 +314,6 @@ value={{
 }}
 This is ES6 object property shorthand.
 */
+
+// hosting link:
+// instant-bite.vercel.app

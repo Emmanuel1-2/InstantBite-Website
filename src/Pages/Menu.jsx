@@ -62,3 +62,87 @@ export default function Menu() {
     </div>
   )
 }
+
+
+/*
+includes() checks whether something exists inside an array or string.
+
+It returns:
+true → if the value is found
+
+false → if it’s not found
+
+Example: 
+let fruits = ["apple", "banana", "orange"];
+
+fruits.includes("banana");
+
+The result is true because "banana" is in the fruits array.
+
+
+How it works internally:
+
+JavaScript checks each element:
+
+apple  → not match
+banana → MATCH → stop searching
+
+Returns true.
+
+NOTE:
+Important idea 💡
+
+includes() does NOT ask:
+
+“Is apple in the array?”
+
+It asks:
+
+“Is THE VALUE I AM SEARCHING FOR in the array?”
+
+So if you search for "banana":
+
+apple → ignored (not equal)
+
+banana → match → return true
+
+
+Another example:
+fruits.includes("apple");
+Now the check becomes:
+
+apple === apple ? ✅ YES → stop immediately
+It doesn’t even check the rest anymore.
+
+
+
+Syntax for include():
+array.includes(valueToFind, startIndex)
+
+Parameters:
+valueToFind → what you’re searching for
+
+startIndex (optional) → where to start checking
+
+Example:
+[1,2,3,4].includes(2, 2)
+The result is false because it starts checking from index 2 (value 3) and does not find 2.
+
+
+Using includes() with strings:
+
+Here it checks if a substring exists inside text.
+
+let text = "Hello world";
+
+text.includes("world");
+
+➡️ true
+
+
+###  Important things to know
+
+✔ Case-sensitive:
+
+"Hello".includes("hello") // false
+*/

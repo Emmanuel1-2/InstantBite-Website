@@ -129,3 +129,54 @@ function InstantBiteFooter() {
 }
 
 export default InstantBiteFooter;
+
+/*
+useLocation is React Router that gives you the current path (/, /login, /contact, etc.).
+useLocation is a React Router hook that gives you information about the current URL your app is on.
+It returns an object like this :
+{
+  pathname: "/contact",   // current route
+  search: "?q=food",      // URL query string
+  hash: "#section",        // anchor hash
+  state: { from: "/" }     // optional state passed via navigation
+}
+
+In short:
+useLocation tells your component: "Hey, which page am I on right now?"
+
+
+IF YOU WANT FOOTER ONLY ON SOME PAGES
+
+import { useLocation } from "react-router-dom";
+
+const location = useLocation();
+
+{location.pathname !== "/login" && <Footer />}
+
+
+
+To hide footer on multiple routes:
+
+const location = useLocation();
+
+const hideFooterRoutes = ["/login", "/register"];    - Routes where footer should be hidden 
+
+{!hideFooterRoutes.includes(location.pathname) && <Footer />}
+
+
+alternative but longer code:
+location.pathname !== "/login" && location.pathname !== "/register" && <Footer />
+
+
+
+Footer will NOT render if current path is in hideFooterRoutes
+
+
+| Page URL                                                     | `location.pathname` |
+| ------------------------------------------------------------ | ------------------- |
+| [https://yoursite.com/](https://yoursite.com/)               | `/`                 |
+| [https://yoursite.com/contact](https://yoursite.com/contact) | `/contact`          |
+| [https://yoursite.com/login](https://yoursite.com/login)     | `/login`            |
+
+So, location.pathname always tells your app: “which page am I on right now?”
+*/
